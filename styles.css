@@ -57,15 +57,7 @@ h2::after {
 }
 
 section {
-    padding: 6rem 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+  padding: 6rem 0;
 }
 
 .btn {
@@ -83,7 +75,6 @@ section.visible {
 .btn:hover {
     background-color: rgba(42, 181, 148, 0.426);
 }
-
 
 /* --- HEADER Y NAVEGACIÓN --- */
 .main-header {
@@ -349,15 +340,9 @@ section.visible {
 }
 
 #form-message {
-    margin-top: 1rem;
     color: var(--color-acento);
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
-#form-message.visible {
-    opacity: 1;
-}
 
 /* --- FOOTER --- */
 .main-footer {
