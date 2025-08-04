@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patricia Mago, Desarrollador Frontend especializado en crear experiencias digitales excepcionales.">
+    <meta name="keywords" content="Desarrollador Frontend, Portafolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Patricia Mago">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Patricia Mago | Desarrolladora Frontend</title>
+    <!-- Iconos de BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#hero" class="logo">Patricia Mago</a>
+            <ul class="nav-links">
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="intro">Hola, mi nombre es</p>
+                    <h1>Patricia Mago</h1>
+                    <h2 class="subtitle">Desarrolladora Frontend</h2>
+                    <p>
+                        Me especializo en diseñar y desarrollar experiencias digitales excepcionales. Actualmente, estoy enfocado en construir
+                        productos accesibles y centrados en el usuario.
+                    </p>
+                    <a href="#contact" class="btn">¡Hablemos!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="services" class="container">
+            <h2>Mis Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class='bx bx-code-alt'></i></div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web responsivos y optimizados utilizando las últimas tecnologías como HTML5, CSS3 y JavaScript (ES6+).</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class='bx bxl-react'></i></div>
+                    <h3>Frameworks JS</h3>
+                    <p>Desarrollo de aplicaciones web interactivas y dinámicas con frameworks modernos como React, Vue o Svelte.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class='bx bx-pen'></i></div>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseño de interfaces intuitivas y atractivas, enfocadas en la experiencia de usuario para garantizar la usabilidad y satisfacción.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Portafolio -->
+        <section id="portfolio" class="container">
+            <h2>Mi Portafolio</h2>
+            <div class="portfolio-grid">
+                <!-- Proyecto 1 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x400/112240/64ffda?text=Proyecto+Uno" alt="Imagen del Proyecto Uno">
+                    <div class="portfolio-content">
+                        <h3>Nombre del Proyecto 1</h3>
+                        <p>Una breve descripción del proyecto, las tecnologías utilizadas y el rol que desempeñaste.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Ver Demo</a>
+                            <a href="#" target="_blank">Código Fuente</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x400/112240/64ffda?text=Proyecto+Dos" alt="Imagen del Proyecto Dos">
+                    <div class="portfolio-content">
+                        <h3>Nombre del Proyecto 2</h3>
+                        <p>Una breve descripción del proyecto, las tecnologías utilizadas y el rol que desempeñaste.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Ver Demo</a>
+                            <a href="#" target="_blank">Código Fuente</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x400/112240/64ffda?text=Proyecto+Tres" alt="Imagen del Proyecto Tres">
+                    <div class="portfolio-content">
+                        <h3>Nombre del Proyecto 3</h3>
+                        <p>Una breve descripción del proyecto, las tecnologías utilizadas y el rol que desempeñaste.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Ver Demo</a>
+                            <a href="#" target="_blank">Código Fuente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contact" class="container">
+            <h2>Contacto</h2>
+            <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡No dudes en enviarme un mensaje! Mi bandeja de entrada está siempre abierta.</p>
+            <form id="contact-form" class="contact-form">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+            <p id="form-message"></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+    <div class="container">
+        <div class="social-links">
+            <a href="https://github.com/patriciamagodev" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/patriciamago/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://www.instagram.com/patriciamdev" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+        </div>
+        <p>Patricia Mago &copy; 2025</p>
+    </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
