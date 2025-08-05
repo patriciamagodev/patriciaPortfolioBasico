@@ -160,7 +160,7 @@ section.visible {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/heroUnsplash.jpg'); /* 👈 Reemplaza por tu imagen */
+    background-image: url('./assets/heroUnsplash.webp'); /* 👈 Reemplaza por tu imagen */
     background-size: cover;
     background-position: center;
     opacity: 0.15; /* 🔧 Ajusta la opacidad según te guste */
@@ -202,8 +202,9 @@ section.visible {
     font-size: 1.2rem;
 }
 
-/* --- SERVICIOS --- */
-#services, #portfolio, #contact {
+
+/* --- SECCIÓN SERVICIOS --- */
+#services {
     margin-top: 3rem;
 }
 .services-grid {
@@ -212,117 +213,111 @@ section.visible {
     gap: 1.5rem;
     margin-top: 3rem;
 }
-.service-card {
-    background-color: var(--color-secundario);
-    padding: 2rem;
-    border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-}
-/* Porque el efecto flip ya usa transform.
-.service-card:hover {
-    transform: translateY(-10px);
-}*/
-.service-card .icon {
-    font-size: 2.5rem;
-    color: var(--color-acento);
-    margin-bottom: 1rem;
-}
-.service-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-.service-card p {
-    color: var(--color-texto-secundario);
-}
-/* Flip Card Effect */
+/* Contenedor principal de cada tarjeta */
 .service-card {
     perspective: 1000px;
-    height: 320px; /* 🔥 Asegura altura fija para la animación */
+    height: 320px;
+    background-color: var(--color-acento);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 /* Contenedor interno que rota */
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s ease;
+    transition: transform 0.4s ease-out;
     transform-style: preserve-3d;
+    will-change: transform;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra muy suave y cercana */
 }
-
 /* Aplica el giro en hover */
 .service-card:hover .card-inner {
     transform: rotateY(180deg);
 }
-
 /* Caras de la tarjeta */
-.card-front, .card-back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     padding: 2rem;
     border-radius: 4px;
-    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
     backface-visibility: hidden;
     background-color: var(--color-secundario);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
 }
-
 /* Frente visible por defecto */
 .card-front {
     z-index: 2;
 }
-
 /* Reverso, aparece al girar */
 .card-back {
+    position: relative;
     transform: rotateY(180deg);
-    color: var(--color-texto-secundario);
     text-align: center;
     font-weight: 500;
+    color: var(--color-texto-principal);
 }
-
+/* Icono en el frente */
+.card-front .icon {
+    font-size: 2.5rem;
+    color: var(--color-acento);
+    margin-bottom: 0.1rem;
+}
+.card-front h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.card-front p {
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+    text-align: center;
+}
 /* Fondo tarjeta trasera: Desarrollo Web */
 .card-back.code-bg {
-    background-image: url('./assets/servicesDeveloper.jpg'); /* Cambia por tu ruta real */
+    background-image: url('./assets/servicesDeveloper.webp'); /* ✅ Asegúrate de que esta imagen exista */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--color-texto-principal);
 }
-
 /* Fondo tarjeta trasera: Diseño UI/UX */
 .card-back.design-bg {
-    background-image: url('./assets/servicesCreator.jpg'); /* Cambia por tu ruta real */
+    background-image: url('./assets/servicesCreator.webp'); /* ✅ Asegúrate de que esta imagen exista */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--color-texto-principal);
 }
+/* Overlay oscuro sobre la imagen trasera para mejorar legibilidad del texto */
 .card-back.code-bg::before,
 .card-back.design-bg::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(10, 25, 47, 0.7); /* Sombra azul oscuro */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 25, 47, 0.8);
     border-radius: 4px;
     z-index: 0;
 }
-
+/* El contenido del reverso debe estar sobre el overlay */
 .card-back.code-bg > *,
 .card-back.design-bg > * {
     position: relative;
     z-index: 1;
+    font-weight: 500;
 }
 
 
-
 /* --- PORTAFOLIO --- */
+#portfolio {
+    margin-top: 3rem;
+}
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -375,6 +370,9 @@ section.visible {
 
 
 /* --- CONTACTO --- */
+#contact {
+    margin-top: 3rem;
+}
 #contact .container {
     max-width: 700px;
     text-align: center;
