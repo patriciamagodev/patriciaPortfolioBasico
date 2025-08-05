@@ -125,17 +125,36 @@
         </section>
 
         <!-- Sección Contacto -->
-        <section id="contact" class="container">
-            <h2>Contacto</h2>
-            <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡No dudes en enviarme un mensaje! Mi bandeja de entrada está siempre abierta.</p>
-            <form id="contact-form" class="contact-form">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-                <textarea name="message" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
-            <p id="form-message"></p>
-        </section>
+<section id="contact" class="container">
+  <h2>Contacto</h2>
+  <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡No dudes en enviarme un mensaje! Mi bandeja de entrada está siempre abierta.</p>
+
+  <form id="contact-form" class="contact-form">
+    <!-- Clave Web3Forms -->
+    <input type="hidden" name="access_key" value="117e8cf3-a00a-474a-a5dc-884524a52611">
+
+    <!-- Nombre -->
+    <input type="text" name="name" placeholder="Tu Nombre" required>
+
+    <!-- Email -->
+    <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+
+    <!-- Mensaje -->
+    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+
+    <!-- Botón con loader -->
+    <button type="submit" class="btn" id="submit-btn">
+      <span id="btn-text">Enviar Mensaje</span>
+      <span id="btn-loader" style="display: none;">⏳</span>
+    </button>
+
+    <!-- Resultado -->
+    <p id="form-message" style="margin-top: 1rem;"></p>
+  </form>
+</section>
+
+
+
     </main>
 
     <!-- Footer -->

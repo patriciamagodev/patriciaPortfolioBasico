@@ -75,13 +75,14 @@ section.visible {
     border: 1px solid var(--color-acento);
     border-radius: 4px;
     color: var(--color-acento);
+    background-color: transparent; /* 👈 esto asegura que el fondo sea transparente */
     text-decoration: none;
     font-family: var(--fuente-principal);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: rgba(100, 255, 218, 0.1);
+    background-color: rgba(100, 255, 218, 0.3);
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
@@ -325,40 +326,33 @@ section.visible {
     gap: 2rem;
     margin-top: 3rem;
 }
-
 .portfolio-item {
     background: var(--color-secundario);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
     transition: transform 0.3s ease;
-}
-        
+}     
 .portfolio-item:hover {
     transform: translateY(-10px);
 }
-
 .portfolio-item img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
 }
-
 .portfolio-content {
     padding: 1.5rem;
 }
-
 .portfolio-content h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
-
 .portfolio-content p {
     color: var(--color-texto-secundario);
     margin-bottom: 1rem;
 }
-
 .portfolio-links a {
     color: var(--color-acento);
     text-decoration: none;
@@ -376,6 +370,7 @@ section.visible {
 }
 #contact .container {
     max-width: 700px;
+    min-width: 300px;
     text-align: center;
 }
 #contact h2 {
@@ -392,45 +387,67 @@ section.visible {
     gap: 1rem;
     text-align: center;
 }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: var(--color-secundario);
-            border: 1px solid var(--color-texto-secundario);
-            border-radius: 4px;
-            color: var(--color-texto-principal);
-            font-family: var(--fuente-secundaria);
-        }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--color-secundario);
+    border: 1px solid var(--color-texto-secundario);
+    border-radius: 4px;
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-secundaria);
+}
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-acento);
-        }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
 
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
 
-        .contact-form .btn {
-            align-self: center;
-            width: 150px;
-            cursor: pointer;
-            margin-top: 0.7rem;
-        }
+.contact-form .btn {
+    display: block;
+    margin: 2rem auto 0 auto;
+    width: fit-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+
         
-        #form-message {
-            margin-top: 1rem;
-            color: var(--color-acento);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        #form-message.visible {
-            opacity: 1;
-        }
+#form-message {
+    margin-top: 1rem;
+    color: var(--color-acento);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+} 
+
+#form-message.visible {
+    opacity: 1;
+}
+
+/*Boton form*/
+#btn-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-acento);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
         /* --- FOOTER --- */
         .main-footer {
@@ -457,62 +474,60 @@ section.visible {
             font-size: 0.8rem;
         }
 
-        /* --- MEDIA QUERIES (RESPONSIVE) --- */
-        @media (max-width: 768px) {
-            .navbar .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: var(--color-secundario);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.4s ease-in-out;
-                box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
-            }
+/* --- MEDIA QUERIES (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-secundario);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
+    }
+    .navbar .nav-links.active {
+        right: 0;
+    }
+    .navbar .nav-links li {
+        margin: 2rem 0;
+    }
 
-            .navbar .nav-links.active {
-                right: 0;
-            }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
 
-            .navbar .nav-links li {
-                margin: 2rem 0;
-            }
+    section {
+        padding: 4rem 0;
+    }
 
-            .hamburger {
-                display: block;
-            }
+    h2 {
+        font-size: 1.8rem;
+    }
 
-            .hamburger.active .line:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
+    .hero-content {
+        margin-top: 2rem;
+    }
+    .hero-content .subtitle {
+        margin-bottom: 1.5rem;
             }
-            .hamburger.active .line:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active .line:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            section {
-                padding: 4rem 0;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-            .hero-content {
-                margin-top: 2rem;
-            }
-            .hero-content .subtitle {
-                margin-bottom: 1.5rem;
-            }
-            .hero-content p {
-                margin-bottom: 1rem;
-                line-height: 1.5rem;
-                font-size: 1rem;
-            }
+    .hero-content p {
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
 
         }

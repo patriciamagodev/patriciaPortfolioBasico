@@ -72,32 +72,50 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // --- FORMULARIO DE CONTACTO ---
-    // Selecciona el formulario y el elemento para mostrar mensajes.
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-
-    // Agrega un evento 'submit' al formulario.
-    contactForm.addEventListener('submit', function(e) {
-        // Previene el comportamiento por defecto del formulario (recargar la página).
-        e.preventDefault();
-        
-        // Simulación de envío de formulario.
-        // En un proyecto real, aquí iría una llamada a un backend (p. ej. con fetch).
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        
-        // Muestra un mensaje de confirmación.
-        formMessage.textContent = `¡Gracias por tu mensaje, ${name}! Te responderé pronto.`;
-        formMessage.classList.add('visible');
-        
-        // Limpia el formulario.
-        contactForm.reset();
-        
-        // Oculta el mensaje de confirmación después de 5 segundos.
-        setTimeout(() => {
-            formMessage.classList.remove('visible');
-        }, 5000);
-    });
-
 });
+
+// FORM CON WEB3FORMS
+    document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const message = document.getElementById("form-message");
+  const submitBtn = document.getElementById("submit-btn");
+  const btnText = document.getElementById("btn-text");
+  const btnLoader = document.getElementById("btn-loader");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Loader ON
+    btnText.style.display = "none";
+    btnLoader.style.display = "inline";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        message.textContent = "¡Mensaje enviado con éxito!";
+        message.style.color = "var(--color-acento)";
+        form.reset();
+      } else {
+        message.textContent = "Hubo un error. Intenta más tarde.";
+        message.style.color = "tomato";
+      }
+    } catch (error) {
+      message.textContent = "Error de conexión. Verifica tu red.";
+      message.style.color = "tomato";
+    }
+
+    // Loader OFF
+    btnText.style.display = "inline";
+    btnLoader.style.display = "none";
+  });
+});
+
+
