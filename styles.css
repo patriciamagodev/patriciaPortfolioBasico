@@ -219,9 +219,10 @@ section.visible {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
 }
+/* Porque el efecto flip ya usa transform.
 .service-card:hover {
     transform: translateY(-10px);
-}
+}*/
 .service-card .icon {
     font-size: 2.5rem;
     color: var(--color-acento);
@@ -234,6 +235,92 @@ section.visible {
 .service-card p {
     color: var(--color-texto-secundario);
 }
+/* Flip Card Effect */
+.service-card {
+    perspective: 1000px;
+    height: 320px; /* 🔥 Asegura altura fija para la animación */
+}
+
+/* Contenedor interno que rota */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.9s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Aplica el giro en hover */
+.service-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la tarjeta */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    backface-visibility: hidden;
+    background-color: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Frente visible por defecto */
+.card-front {
+    z-index: 2;
+}
+
+/* Reverso, aparece al girar */
+.card-back {
+    transform: rotateY(180deg);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Fondo tarjeta trasera: Desarrollo Web */
+.card-back.code-bg {
+    background-image: url('./assets/servicesDeveloper.jpg'); /* Cambia por tu ruta real */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-texto-principal);
+}
+
+/* Fondo tarjeta trasera: Diseño UI/UX */
+.card-back.design-bg {
+    background-image: url('./assets/servicesCreator.jpg'); /* Cambia por tu ruta real */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-texto-principal);
+}
+.card-back.code-bg::before,
+.card-back.design-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.7); /* Sombra azul oscuro */
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.card-back.code-bg > *,
+.card-back.design-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 
 /* --- PORTAFOLIO --- */
