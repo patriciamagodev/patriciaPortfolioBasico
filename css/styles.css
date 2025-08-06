@@ -159,7 +159,7 @@ section.visible {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('./assets/heroUnsplash.webp');
+  background-image: url("../assets/heroUnsplash.webp");
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -170,7 +170,7 @@ section.visible {
   position: relative;
   z-index: 1;
   max-width: 800px;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .hero-content .intro {
@@ -191,7 +191,7 @@ section.visible {
 }
 
 .hero-content .subtitle {
-  font-size: clamp(32px, 8vw, 70px);
+  font-size: clamp(32px, 8vw, 60px);
   color: var(--color-texto-secundario);
   margin-bottom: 2.1rem;
   line-height: 1;
@@ -255,20 +255,23 @@ section.visible {
 }
 
 .card-front .icon {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--color-acento);
   margin-bottom: 0.1rem;
+  padding: 0;
 }
 
 .card-front h3 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .card-front p {
   color: var(--color-texto-secundario);
   text-align: center;
   font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .card-front {
@@ -291,11 +294,11 @@ section.visible {
 }
 
 .card-back.code-bg {
-  background-image: url('./assets/servicesDeveloper.webp');
+  background-image: url('../assets/servicesDeveloper.webp');
 }
 
 .card-back.design-bg {
-  background-image: url('./assets/servicesCreator.webp');
+  background-image: url('../assets/servicesCreator.webp');
 }
 
 .card-back::before {
@@ -534,5 +537,9 @@ section.visible {
   }
   .card-front h3 {
   font-size: 1.2rem;
+  text-align: center;
+  }
+  .card-front p {
+  line-height: 1.5rem;
   }
 }
