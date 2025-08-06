@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patricia Mago | Desarrolladora Frontend</title>
-  <link rel="icon" href="./assets/Foto-Perfil-Patricia-Mago.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sobre mí | Patricia Mago</title>
+    <link rel="icon" href="./assets/Foto-Perfil-Patricia-Mago.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 </head>
 <body>
     <header class="main-header">
-    <nav class="navbar container">
-        <a href="#hero" class="logo">Patricia Mago</a>
+        <nav class="navbar container">
+        <a href="./index.html" class="logo">Patricia Mago</a>
         <ul class="nav-links">
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#portfolio">Portafolio</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="./about.html" class="active">Conóceme</a></li>
+            <li><a href="./index.html#services">Servicios</a></li>
+            <li><a href="./index.html#portfolio">Portafolio</a></li>
+            <li><a href="./index.html#contact">Contacto</a></li>
         </ul>
         <div class="hamburger">
             <div class="line"></div>
@@ -26,19 +27,75 @@
     </header>
 
     <main>
-        <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-            <p class="intro">Comunicadora & Developer</p>
-            <h1>Patricia Mago</h1>
-            <h2 class="subtitle">Creo Sitios Web que Conectan con Clientes Reales</h2>
-            <p>Desarrolladora Web Frontend especializada en crear experiencias digitales accesibles y centradas en el usuario.</p>
-            <a href="#contact" class="btn">¡Hablemos!</a>
+        <!-- Acerca de mí -->
+        <section class="container" style="margin-top: 8rem">
+        <h2>Sobre mí</h2>
+        <div class="about-grid">
+            <div class="about-image">
+            <img src="./assets/Foto-Perfil-Patricia-Mago.jpg" alt="Patricia Mago" />
+            </div>
+            <div class="about-text">
+            <p>Soy <strong>Patricia Mago</strong>, Comunicadora Social con un enfoque actual en el <strong>desarrollo web frontend</strong>. Me apasiona la tecnología, el diseño y la creación de experiencias digitales que realmente conecten con las personas. </p>
+            <p>Con experiencia en entornos corporativos, redes sociales y marketing digital, combino la creatividad con el código para aportar valor real a proyectos digitales. Actualmente me especializo en HTML, CSS y JavaScript.</p>
+            <a href="./index.html#contact" class="btn">¡Conversemos!</a>
             </div>
         </div>
         </section>
 
+        <!-- Línea de tiempo -->
+        <section class="container">
+        <h2>Mi Trayectoria</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+            <span class="timeline-year">2024 - Presente</span>
+            <div class="timeline-content">
+                <h3>Desarrolladora Web Autodidacta</h3>
+                <p>Estudio y practico desarrollo web frontend aplicando buenas prácticas y diseño responsivo.</p>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <span class="timeline-year">2022 - 2024</span>
+            <div class="timeline-content">
+                <h3>Gestión de Contenido & Social Media</h3>
+                <p>Experiencia en manejo de redes, creación de contenido y atención al cliente digital.</p>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <span class="timeline-year">2016 - 2021</span>
+            <div class="timeline-content">
+                <h3>Licenciada en Comunicación Social</h3>
+                <p>Formación en comunicación corporativa, redacción, medios digitales y estrategia de marca.</p>
+            </div>
+            </div>
+        </div>
+        </section>
 
+        <!-- Habilidades -->
+        <section class="container">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+            <h3>Habilidades Técnicas</h3>
+            <ul>
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript (básico-intermedio)</li>
+                <li>Diseño Responsivo</li>
+                <li>Git / GitHub</li>
+                <li>Canva / Figma</li>
+            </ul>
+            </div>
+            <div class="skill-category">
+            <h3>Habilidades Blandas</h3>
+            <ul>
+                <li>Comunicación efectiva</li>
+                <li>Organización y planificación</li>
+                <li>Resolución de problemas</li>
+                <li>Empatía y orientación al cliente</li>
+                <li>Aprendizaje continuo</li>
+            </ul>
+            </div>
+        </div>
+        </section>
     </main>
 
     <footer class="main-footer">
