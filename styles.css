@@ -520,11 +520,13 @@ section.visible {
   .hero-content {
     margin-top: 2rem;
   }
-
+  .hero-content .intro {
+    letter-spacing: -0.5px;
+  }
   .hero-content .subtitle {
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
   }
-
   .hero-content p {
     margin-bottom: 1rem;
     font-size: 1rem;
